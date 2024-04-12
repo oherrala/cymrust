@@ -1,8 +1,8 @@
 [package]
 name = "cymrust"
-version = "0.4.1"
-authors = [ "Ossi Herrala <devel@hownetworks.io>" ]
-edition = "2018"
+version = "0.5.0"
+authors = [ "Ossi Herrala <oherrala@iki.fi>" ]
+edition = "2021"
 
 description = "Query Team Cymru's IP-to-ASN mapping via DNS"
 keywords = [ "ip", "network", "bgp", "resolver", "cymru" ]
@@ -14,8 +14,8 @@ readme = "README.md"
 
 license = "MIT"
 
-exclude = [ ".gitignore", "circle.yml" ]
+exclude = [ ".gitignore" ]
 
 [dependencies]
 chrono = "0.4"
-trust-dns-resolver = "0.20"
+trust-dns-resolver = "0.23"
