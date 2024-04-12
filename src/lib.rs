@@ -9,7 +9,6 @@
 //! function. To query only information about AS Number, see
 //! [`cymru_asn`](fn.cymru_asn.html).
 
-use std::cmp;
 use std::fmt;
 use std::io;
 use std::net::{IpAddr, Ipv6Addr};
@@ -110,7 +109,7 @@ pub fn cymru_ip2asn(ip: IpAddr) -> Result<Vec<CymruIP2ASN>, Error> {
             country_code: origin.country_code,
             registry: origin.registry,
             allocated: origin.allocated.map(|s| s.to_string()),
-            expires: cmp::min(origin.expires, asn[0].expires),
+            expires: origin.expires.min(asn[0].expires),
         };
 
         results.push(result);
